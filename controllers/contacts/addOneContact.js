@@ -1,5 +1,5 @@
 const { HttpError } = require('../../helpers');
-const Contact = require('../../models/contact');
+const { Contact } = require('../../models/contact');
 
 const addOneContact = async (req, res, next) => {
   const newContact = await Contact.create(req.body);
