@@ -4,6 +4,7 @@ const addOneContact = require('./addOneContact');
 const deleteOneContact = require('./deleteOneContact');
 const updateOneContact = require('./updateOneCotact');
 const updateFavorite = require('./updateFavorite');
+const getFavorite = require('./getFavorite');
 module.exports = {
   getAll,
   getOneById,
@@ -11,4 +12,5 @@ module.exports = {
   deleteOneContact,
   updateOneContact,
   updateFavorite,
+  getFavorite,
 };
