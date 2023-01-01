@@ -1,8 +1,10 @@
 const { HttpError } = require('../../helpers');
 const { Contact } = require('../../models/contact');
 
-const addOneContact = async (req, res, next) => {
-  const newContact = await Contact.create(req.body);
+const addOneContact = async (req, res) => {
+  const { _id: owner } = req.user;
+
+  const newContact = await Contact.create({ ...req.body, owner });
   if (!newContact) {
     throw HttpError(404, 'Not found');
   }
