@@ -14,12 +14,11 @@ afterEach(async () => {
 });
 
 describe('POST /api/register', () => {
-  it('should create a user', async done => {
+  it('should create a user', async () => {
     const res = await request(app).post('/api/register').send({
       email: 'testEmail@gmail.com',
       password: '123456',
     });
     expect(res.statusCode).toBe(201);
-    done();
   });
 });
