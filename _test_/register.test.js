@@ -5,7 +5,7 @@ const app = require('../routes/api/auth');
 require('dotenv').config();
 /* Connecting to the database before each test. */
 beforeEach(async () => {
-  await mongoose.connect(process.env.DB_HOST);
+  mongoose.connect(process.env.DB_HOST);
 });
 
 /* Closing database connection after each test. */
