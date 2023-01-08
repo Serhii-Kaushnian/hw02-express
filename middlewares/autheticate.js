@@ -4,6 +4,7 @@ const { User } = require('../models/user');
 const { JWT_SECRET_KEY } = process.env;
 
 const autheticate = async (req, res, next) => {
+
   const { authorization = '' } = req.headers;
   const [bearer, token] = authorization.split(' ');
   if (bearer !== 'Bearer') {
