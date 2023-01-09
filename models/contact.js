@@ -8,6 +8,7 @@ const contactSchema = new Schema(
     email: { type: String, required: [true, 'Set email for contact'] },
     phone: { type: String, required: [true, 'Set phone for contact'] },
     favorite: { type: Boolean, default: false },
+    avatarURL: { type: String },
     owner: { type: Schema.Types.ObjectId, ref: 'user', required: true },
   },
   { versionKey: false, timestamps: true }

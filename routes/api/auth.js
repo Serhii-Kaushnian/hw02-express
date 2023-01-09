@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const controllerWrapper = require('../../helpers/controllerWrapper');
-const { register, login, getCurrent, logout, updateSubscription } = require('../../controllers/auth');
-const { validateBody, autheticate } = require('../../middlewares');
+const { register, login, getCurrent, logout, updateSubscription, updateAvatar } = require('../../controllers/auth');
+const { validateBody, autheticate, upload } = require('../../middlewares');
 
 const {
   schemas: { registerSchema, loginSchema },
@@ -17,5 +17,7 @@ router.get('/current', autheticate, controllerWrapper(getCurrent));
 router.post('/logout', autheticate, controllerWrapper(logout));
 
 router.patch('/', autheticate, controllerWrapper(updateSubscription));
+
+router.patch('/avatars', autheticate, upload.single('avatar'), controllerWrapper(updateAvatar));
 
 module.exports = router;

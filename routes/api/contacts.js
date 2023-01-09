@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+
 const { getAll, getOneById, addOneContact, deleteOneContact, updateOneContact, updateFavorite, getFavorite } = require('../../controllers/contacts');
 
 const controllerWrapper = require('../../helpers/controllerWrapper');
