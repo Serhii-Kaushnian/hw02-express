@@ -12,10 +12,12 @@ beforeEach(async () => {
 afterEach(async () => {
   await mongoose.connection.close();
 });
+
 const mockData = {
   email: '1testEmail@gmail.com',
   password: '123456',
 };
+
 describe('POST /api/register', () => {
   it('should create a user', async () => {
     const res = await request(app).post('/api/auth/register').send(mockData);
